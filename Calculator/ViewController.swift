@@ -124,6 +124,9 @@ class ViewController: UIViewController {
         var number = Double(currentNumber) ?? 0
         
         let alert = UIAlertController(title: "Error", message: "You can not transform a zero number", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
         
         guard number != 0 else {return self.present(alert, animated: true, completion: nil)}
         
